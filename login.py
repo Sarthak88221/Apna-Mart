@@ -1,4 +1,5 @@
 from tkinter import *
+from second_window import DisplayCategory
 
 class login(object):
     def __init__(self,master):
@@ -51,6 +52,7 @@ class login(object):
         self.right_google_label = Label(self.right, image=self.right_google, bg="white")
         self.right_google_label.place(x=345, y=498)
 
+        
         self.left_img = PhotoImage(file='img/login-left.png')
         self.left_img_label = Label(self.left, image=self.left_img,bg="white")
         self.left_img_label.place(x=0, y=0)
@@ -75,8 +77,14 @@ class login(object):
 
 
         # login button
-        self.right_button = Button(self.right, text="Log in", font="times 12 bold", width="10",height="2",bg="deep sky blue",fg="white",bd=0)
+        self.right_button = Button(self.right, text="Log in", font="times 12 bold", width="10",height="2",bg="deep sky blue",fg="white",bd=0, command=self.login)
         self.right_button.place(x=155, y=320)
+    
+
+
+    # function of login Button
+    def login(self):
+        log = DisplayCategory()
 
 
 
