@@ -1,4 +1,5 @@
 from tkinter import *
+from calendar import*
 
 
 class AddItems(Toplevel):
@@ -10,19 +11,17 @@ class AddItems(Toplevel):
         self.resizable(False,False)
 
         #top frame
+
         self.top = Frame(self, width=1000, height=170, bg="goldenrod")
         self.top.pack(fill=X)
 
-
         #topFrame design
+
         Label(self.top, text="Add New Items", font="times 28 bold", width=17, height=-2, 
-        fg="black", bg="yellow", bd=2).place(x=310, y=2)
-        
-        
+        fg="black", bg="yellow", bd=2).place(x=310, y=2)             
 
+        #Bottom Frame
 
-
-          #Bottom Frame
         self.bottom = Frame(self, width=1000, height=480, bg="#6510b5")
         self.bottom.pack(fill=X)
 
@@ -70,6 +69,11 @@ class AddItems(Toplevel):
 
         #self.entery_address = Text(self.bottom, width=28, bd=6, height=5)
         #self.entery_address.place(x=190, y=240)
+
+        #Create a Calendar using DateEntry
+
+        self.cal = Calendar(self.bottom, background= "magenta3", foreground= "white",bd=2)
+        self.cal.place(x=45, y=20)
 
         #button
         self.button = Button(self.bottom, text="Add Items", 
