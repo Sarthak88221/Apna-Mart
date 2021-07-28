@@ -66,6 +66,8 @@ class AddItems(Toplevel):
         #self.entery_phone.insert(0, "Enter phone Number")
         #self.entery_phone.place(x=190, y=190)
 
+#calendar for expiry and manufacture
+
         # manufacture date
         cal = Calendar(self.bottom, selectmode='day',year=2021, month=7, day=23)
         cal.place(x=190, y=190)
