@@ -1,5 +1,5 @@
 from tkinter import *
-from calendar import*
+from tkcalendar import Calendar
 
 
 class AddItems(Toplevel):
@@ -33,7 +33,7 @@ class AddItems(Toplevel):
         width=10, bg="#6510b5", fg="white", padx=0)
         self.label_itemname.place(x=45, y=40)
         self.entery_itemname = Entry(self.bottom, width=30, bd=6)
-        self.entery_itemname.insert(0, "Enter Item Name")
+        self.entery_itemname.insert(0, "Enter Item Name: ")
         self.entery_itemname.place(x=190, y=40)
 
         #Price
@@ -54,28 +54,37 @@ class AddItems(Toplevel):
         
         self.entery_quantity.place(x=190, y=140)
 
+        # function to get date
+        def grad_date():
+            self.config(text = "Selected Date is: " + cal.get_date())
+
         #Manufactured Date
-        self.label_mfd = Label(self.bottom, text="Manufactured Date:", font="arial 15 bold", 
+        self.label_mfd = Label(self.bottom, text="MFD:", font="arial 15 bold", 
         width=15, bg="#6510b5", fg="white", padx=0)
         self.label_mfd.place(x=45, y=190)
        # self.entery_phone = Entry(self.bottom, width=30, bd=6)
         #self.entery_phone.insert(0, "Enter phone Number")
         #self.entery_phone.place(x=190, y=190)
 
+        # manufacture date
+        cal = Calendar(self.bottom, selectmode='day',year=2021, month=7, day=23)
+        cal.place(x=190, y=190)
+
         #Expiry Date
+        
+
+        # expiry date
+        cal = Calendar(self.bottom, selectmode='day',year=2021, month=7, day=23)
+        cal.place(x=595, y=190)
+        Button(self.bottom, text = "Get Date",command = grad_date).place(x=650, y=400)
+
         self.label_expd = Label(self.bottom, text="Expiry Date:", font="arial 15 bold",
          width=15, bg="#6510b5", fg="white", padx=0)
-        self.label_expd.place(x=45, y=240)
-
+        self.label_expd.place(x=450, y=190)
         #self.entery_address = Text(self.bottom, width=28, bd=6, height=5)
         #self.entery_address.place(x=190, y=240)
 
-        #Create a Calendar using DateEntry
-
-        self.cal = Calendar(self.bottom, background= "magenta3", foreground= "white",bd=2)
-        self.cal.place(x=45, y=20)
-
         #button
         self.button = Button(self.bottom, text="Add Items", 
-        font="arial 12 bold", width=15, fg="#160163", bg="white")
-        self.button.place(x=120, y=350)
+        font="arial 18 bold", width=15, fg="#160163", bg="white")
+        self.button.place(x=400, y=410)
